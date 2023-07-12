@@ -11,7 +11,8 @@ const getContacts = (req, res)=>{
 const createContact = (req, res)=>{
   const {name,email,phone} = req.body;
   if(!name || !email || !phone){
-    res.status(400)
+    res.status(400);
+    throw new Error('All fields are mandatory!')
   }
   res.status(201).json({ message : "Create all contacts"})
 }
