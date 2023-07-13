@@ -11,7 +11,8 @@ const port = process.env.PORT || 5000;
 // Whenever we need to accept data from client to server, we need to use body parser to parse the data that we are recieving from the client - for that we make use of middleware (Express)
 app.use(express.json())
 // Here app.use is middleware
-app.use("/api/contacts",require("./routes/contactRoute"))
+app.use("/api/contacts",require("./routes/contactRoute"));
+app.use("/api/users",require("./routes/userRoute"));
 app.use(errorHandler)
 
 app.listen(port, () => {
